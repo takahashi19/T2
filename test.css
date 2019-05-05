@@ -1,0 +1,81 @@
+@charset "UTF-8";
+
+/* チャプター：CSSの実習準備 */
+body {
+   margin: 0;
+   padding: 0;
+   color: #333;
+   font-size: 14px;
+}
+
+a {
+   color: #333;
+}
+
+a:visited {
+   color: #333;
+}
+
+a:hover {
+   color: #333;
+   font-weight: 700;
+   text-decoration: none;
+}
+
+h1,h2,h3,h4,h5,h6 {
+   margin-top: 0;
+}
+
+p {
+   margin-top: 0;
+   line-height: 1.6;
+}
+
+#main h2 {
+   background: #fff;
+   font-size: 20px;
+   padding: 8px 22px;
+   border-radius: 2px;
+   border: 1px soild #956840;
+}
+
+#main h3 {
+   font-size: 16px;
+   border-left: soild 3px #fa9786;
+   padding: 4px 9px 4px 14px;
+}
+
+header {
+   width: 984px;
+   margin: 0 auto;
+}
+
+header h1 {
+   margin: 5px 0 10px;
+}
+
+#global_navi {
+   font-size: 0;  /* 半角スペース削除 */
+   margin-bottom: 16px;
+   list-style: none;
+   margin: 0;
+   padding: 0;
+}
+
+#global_navi ul li {
+   font-size: 14px;  /* フォントサイズ復活 */
+   display: inline-block;
+   width: 163px;
+   margin-right: 1px;
+   text-align: center;
+}
+
+#global_navi ul li a {
+   display: block;
+   padding: 10px 16px;
+   background-color: #f0573e;
+   color: #fff;
+   text-decoration: none;
+　  text-align: center;
+　  transition: background-color .2s linear;
+}

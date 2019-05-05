@@ -1,0 +1,8 @@
+<h2><%= gettext "New entry" %></h2>
+
+<%= render "form.html", changeset: @changeset,
+                        entry: nil,
+                        locale: @conn.assigns.locale,
+                        action: admin_entry_path(@conn, :create, @conn.assigns.locale) %>
+
+<%= link gettext("Back"), to: admin_entry_path(@conn, :index, @conn.assigns.locale) %>

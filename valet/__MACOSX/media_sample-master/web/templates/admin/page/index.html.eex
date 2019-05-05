@@ -1,0 +1,30 @@
+<div class="jumbotron">
+  <h2><%= gettext "Dashboard" %></h2>
+</div>
+
+<div class="row marketing">
+  <div class="col-lg-6">
+    <h4><%= gettext "List" %></h4>
+    <ul>
+      <li>
+        <%= link gettext("AdminUser"), to: admin_admin_user_path(@conn, :index, @conn.assigns.locale) %>
+      </li>
+      <li>
+        <%= link gettext("User"), to: admin_user_path(@conn, :index, @conn.assigns.locale) %>
+      </li>
+      <li>
+        <%= link gettext("Category"), to: admin_category_path(@conn, :index, @conn.assigns.locale) %>
+      </li>
+      <li>
+        <%= link gettext("Entry"), to: admin_entry_path(@conn, :index, @conn.assigns.locale) %>
+      </li>
+      <li>
+        <%= link gettext("Section"), to: admin_section_path(@conn, :index, @conn.assigns.locale) %>
+      </li>
+      <li>
+        <%= link gettext("Tag"), to: admin_tag_path(@conn, :index, @conn.assigns.locale) %>
+      </li>
+    </ul>
+  </div>
+
+</div>

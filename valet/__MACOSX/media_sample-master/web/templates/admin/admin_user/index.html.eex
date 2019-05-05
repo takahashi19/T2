@@ -1,0 +1,32 @@
+<h2><%= gettext "Listing admin users" %></h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th><%= gettext "Email" %></th>
+      <th><%= gettext "Name" %></th>
+      <th><%= gettext "Status" %></th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for admin_user <- @admin_users do %>
+    <tr>
+      <td><%= admin_user.email %></td>
+      <td><%= admin_user.name %></td>
+      <td><%= Status.get(admin_user.status).text %></td>
+
+      <td class="text-right">
+        <%= link gettext("Show"), to: admin_admin_user_path(@conn, :show, @conn.assigns.locale, admin_user), class: "btn btn-default btn-xs" %>
+        <%= link gettext("Edit"), to: admin_admin_user_path(@conn, :edit, @conn.assigns.locale, admin_user), class: "btn btn-default btn-xs" %>
+        <%= link gettext("Delete"), to: admin_admin_user_path(@conn, :delete, @conn.assigns.locale, admin_user), method: :delete, data: [confirm: gettext("Are you sure?")], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= pagination_links @conn, @page, [@conn.assigns.locale], path: &admin_admin_user_path/4 %>
+
+<%= link gettext("New"), to: admin_admin_user_path(@conn, :new, @conn.assigns.locale) %>

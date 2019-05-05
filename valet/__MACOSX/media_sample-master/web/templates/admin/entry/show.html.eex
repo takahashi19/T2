@@ -1,0 +1,45 @@
+<h2><%= gettext "Show entry" %></h2>
+
+<ul>
+
+  <li>
+    <strong><%= gettext "User" %>:</strong>
+    <%= translate(@entry.user, :name) %>
+  </li>
+
+  <li>
+    <strong><%= gettext "Category" %>:</strong>
+    <%= translate(@entry.category, :name) %>
+  </li>
+
+  <li>
+    <strong><%= gettext "Tag" %>:</strong>
+    <%= assoc_captions(@entry.tags, :name) %>
+  </li>
+
+  <li>
+    <strong><%= gettext "Title" %>:</strong>
+    <%= translate(@entry, :title) %>
+  </li>
+
+  <li>
+    <strong><%= gettext "Description" %>:</strong>
+    <%= translate(@entry, :description) %>
+  </li>
+
+  <li>
+    <strong><%= gettext "Image" %>:</strong>
+    <%= if @entry.image do %>
+      <img src="<%= EntryImageUploader.url({@entry.image, @entry}, :medium) %>" alt="" />
+    <% end %>
+  </li>
+
+  <li>
+    <strong><%= gettext "Status" %>:</strong>
+    <%= Status.get(@entry.status).text %>
+  </li>
+
+</ul>
+
+<%= link gettext("Edit"), to: admin_entry_path(@conn, :edit, @conn.assigns.locale, @entry) %>
+<%= link gettext("Back"), to: admin_entry_path(@conn, :index, @conn.assigns.locale) %>

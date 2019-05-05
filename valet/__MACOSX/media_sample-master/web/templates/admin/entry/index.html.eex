@@ -1,0 +1,36 @@
+<h2><%= gettext "Listing entries" %></h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th><%= gettext "User" %></th>
+      <th><%= gettext "Category" %></th>
+      <th><%= gettext "Tag" %></th>
+      <th><%= gettext "Title" %></th>
+      <th><%= gettext "Status" %></th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for entry <- @entries do %>
+    <tr>
+      <td><%= translate(entry.user, :name) %></td>
+      <td><%= translate(entry.category, :name) %></td>
+      <td><%= assoc_captions(entry.tags, :name) %></td>
+      <td><%= translate(entry, :title) %></td>
+      <td><%= Status.get(entry.status).text %></td>
+
+      <td class="text-right">
+        <%= link gettext("Show"), to: admin_entry_path(@conn, :show, @conn.assigns.locale, entry), class: "btn btn-default btn-xs" %>
+        <%= link gettext("Edit"), to: admin_entry_path(@conn, :edit, @conn.assigns.locale, entry), class: "btn btn-default btn-xs" %>
+        <%= link gettext("Delete"), to: admin_entry_path(@conn, :delete, @conn.assigns.locale, entry), method: :delete, data: [confirm: gettext("Are you sure?")], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= pagination_links @conn, @page, [@conn.assigns.locale], path: &admin_entry_path/4 %>
+
+<%= link gettext("New"), to: admin_entry_path(@conn, :new, @conn.assigns.locale) %>

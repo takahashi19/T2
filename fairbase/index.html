@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>Firebase Test</title>
+        <style>
+      .visible-block {
+        display: block;
+      }
+      .hidden-block {
+        display: none;
+      }
+
+    </style>
+  </head>
+  <body>
+    <h1>Firebase Test</h1>
+    <form>
+      <div class="visible-on-logout">
+        MAIL：<input type="email" id="user-mail" /><br />
+        PASS：<input type="password" id="user-pass" /><br />
+        <button type="button" id="login-button">ログイン</button>
+      </div>
+      <div class="visible-on-login">
+        <button type="button" id="logout-button">ログアウト</button>
+      </div>
+    </form>
+    <div class="visible-on-login">
+      <button type="button" id="my-button">setNewValue</button><br />
+      <input type="file" accept=".jpg,.jpeg,.png,.gif, image/jpeg,image/png,image/gif" id="upload-image"><br />
+      <img id="upload-image-preview" style="width: 64px; height: 64px;"/>
+    </div>
+    <!--ＩＤはＩＤとして扱える模様-->
+    
+    
+    
+    
+    
+    
+    
+    <!-- Firebaseのセットアップコード（以下のSDKのバージョンは3.2.1） -->
+    <script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
+    <!-- apiKeyなどは、ご自身の環境のものに合わせてください -->
+    <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyCfi1Hcq5hA-xw6LSLg-bOOoUU5MrHtDFo",
+      authDomain: "realtime-7ec01.firebaseapp.com",
+      databaseURL: "https://realtime-7ec01.firebaseio.com",
+      projectId: "realtime-7ec01",
+      storageBucket: "realtime-7ec01.appspot.com",
+      messagingSenderId: "364875060142"
+    };
+    firebase.initializeApp(config);
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

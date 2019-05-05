@@ -1,0 +1,30 @@
+<h2><%= gettext "Show category" %></h2>
+
+<ul>
+
+  <li>
+    <strong><%= gettext "Name" %>:</strong>
+    <%= translate(@category, :name) %>
+  </li>
+
+  <li>
+    <strong><%= gettext "Description" %>:</strong>
+    <%= translate(@category, :description) %>
+  </li>
+
+  <li>
+    <strong><%= gettext "Image" %>:</strong>
+    <%= if @category.image do %>
+      <img src="<%= CategoryImageUploader.url({@category.image, @category}, :medium) %>" alt="" />
+    <% end %>
+  </li>
+
+  <li>
+    <strong><%= gettext "Status" %>:</strong>
+    <%= Status.get(@category.status).text %>
+  </li>
+
+</ul>
+
+<%= link gettext("Edit"), to: admin_category_path(@conn, :edit, @conn.assigns.locale, @category) %>
+<%= link gettext("Back"), to: admin_category_path(@conn, :index, @conn.assigns.locale) %>

@@ -1,0 +1,20 @@
+<div class="jumbotron">
+  <h2><%= gettext "Top" %></h2>
+</div>
+
+<div class="row marketing">
+  <div class="col-lg-6">
+    <h4><%= gettext "Admin" %></h4>
+    <ul>
+      <li>
+        <%= link gettext("Admin"), to: admin_page_path(@conn, :index, @conn.assigns.locale) %>
+      </li>
+    </ul>
+    <h4><%= gettext "Public" %></h4>
+    <ul>
+      <li>
+        <%= link gettext("Entries"), to: entry_path(@conn, :index, @conn.assigns.locale) %>
+      </li>
+    </ul>
+  </div>
+</div>

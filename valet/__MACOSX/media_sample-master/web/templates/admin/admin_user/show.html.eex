@@ -1,0 +1,23 @@
+<h2>Show admin user</h2>
+
+<ul>
+
+  <li>
+    <strong><%= gettext "Email" %>:</strong>
+    <%= @admin_user.email %>
+  </li>
+
+  <li>
+    <strong><%= gettext "Name" %>:</strong>
+    <%= @admin_user.name %>
+  </li>
+
+  <li>
+    <strong><%= gettext "Status" %>:</strong>
+    <%= Status.get(@admin_user.status).text %>
+  </li>
+
+</ul>
+
+<%= link gettext("Edit"), to: admin_admin_user_path(@conn, :edit, @conn.assigns.locale, @admin_user) %>
+<%= link gettext("Back"), to: admin_admin_user_path(@conn, :index, @conn.assigns.locale) %>

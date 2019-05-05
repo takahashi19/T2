@@ -1,0 +1,42 @@
+header {
+  width: 1000px;
+  background: #ffcccc
+}
+#wrapper {
+  width: 1000px;
+}
+
+#menu {
+  float: right;
+  width: 300px;
+  background-color: #ccccff;
+}
+
+#main {
+  float: left;
+  width: 100px;
+  background-color: #ccffcc;
+}
+
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+
+footer {
+  width: 200px;
+  clear: both;
+  background-color: #ffccff;
+}
+
+/*パターン２
+p{
+  margin: auto
+}
+
+h1{
+  margin: auto
+}
+*/

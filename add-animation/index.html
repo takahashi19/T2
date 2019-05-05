@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>Animate Test</title>
+  <link rel="stylesheet" href="animate.css">
+  <style>
+  body {
+    background: repeating-linear-gradient(
+      0deg,
+      #ffffff,
+      #ffffff 40px,
+      #dedede 40px,
+      #dedede 80px
+    );
+  }
+  .boxes {
+    margin: 80vh auto;
+  }
+  .box {
+    border: 1px solid #000;
+    width: 10em;
+    padding: 10px;
+    margin: 2em auto;
+    text-align: center;
+  }
+
+  .animated {
+    /* 最初から非表示 */
+    opacity: 0;
+  }
+
+  </style>
+</head>
+<body>
+  <div class="boxes">
+    <div class="box animated">box</div>
+    <div class="box animated">box</div>
+    <div class="box animated">box</div>
+    <div class="box animated">box</div>
+    <div class="box animated">box</div>
+    <div class="box animated">box</div>
+    <div class="box animated">box</div>
+    <div class="box animated">box</div>
+    <div class="box animated">box</div>
+    <div class="box animated">box</div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="jquery.waypoints.min.js"></script>
+  <script src="main.js"></script></body>
+</html>

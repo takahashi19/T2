@@ -1,0 +1,6 @@
+<h2><%= gettext "Edit admin user" %></h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: admin_admin_user_path(@conn, :update, @conn.assigns.locale, @admin_user) %>
+
+<%= link gettext("Back"), to: admin_admin_user_path(@conn, :index, @conn.assigns.locale) %>

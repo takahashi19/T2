@@ -1,0 +1,20 @@
+<ul>
+  <li>
+    <strong><%= translate(@entry, :title) %></strong>
+  </li>
+
+  <li>
+    <%= translate(@entry, :description) %>
+  </li>
+
+  <li>
+    <%= if @entry.image do %>
+      <img src="<%= EntryImageUploader.url({@entry.image, @entry}, :medium) %>" alt="" />
+    <% end %>
+  </li>
+
+  <li>
+    <strong><%= assoc_captions(@entry.tags, :name) %></strong>
+  </li>
+</ul>
+<%= link gettext("Back"), to: entry_path(@conn, :index, @conn.assigns.locale) %>
